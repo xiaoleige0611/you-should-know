@@ -13,6 +13,8 @@ const testHome = mkdtempSync(join(tmpdir(), 'ysk-codex-install-'));
 const env = { ...process.env, CODEX_HOME: testHome };
 function cli(args) {
   const result = spawnSync('codex', args, { env, cwd: testHome, encoding: 'utf8', timeout: 25000 });
+  assert.ifError(result.error);
+  assert.equal(result.signal, null, `Codex command interrupted: ${result.signal}`);
   assert.equal(result.status, 0, result.stderr || String(result.error));
   return result.stdout;
 }
