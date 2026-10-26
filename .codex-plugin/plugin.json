@@ -1,0 +1,11 @@
+{
+  "name": "you-should-know",
+  "version": "0.1.0",
+  "description": "默认静默加载独立审查规则，只提醒有证据的重要遗漏，支持持久关闭。",
+  "skills": "./skills/",
+  "hooks": "./hooks/hooks.json",
+  "interface": {
+    "displayName": "You Should Know",
+    "shortDescription": "静默独立审查，重要问题才提醒"
+  }
+}
